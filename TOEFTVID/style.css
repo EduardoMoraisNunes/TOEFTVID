@@ -1,0 +1,635 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    overflow: hidden;
+}
+@font-face {
+    font-family: 'unbatang';
+    src: url(fonts/UnBatang.otf);
+}
+@font-face {
+    font-family: 'noticia';
+    src: url(fonts/NoticiaText-Regular.ttf);
+}
+#titlescreen{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid rgb(200, 054, 124) ;
+    box-sizing: border-box;
+    background-image: linear-gradient(to left, rgb(200, 054, 124), transparent);
+    user-select: none;
+}
+#title{
+    top: 5%;
+    font-size: 40pt;
+    color: rgb(200, 054, 124);
+    text-shadow: 1px 0px rgb(052, 016, 032);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    font-family: unbatang;
+}
+#subtitle{
+    bottom: 25%;
+    font-size: 20pt;
+    color: rgb(200, 054, 124);
+    text-shadow: 1px 0px rgb(052, 016, 032);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+}
+@keyframes oscilation {
+   50%{
+    opacity: 60%;
+   } 
+   100%{
+    opacity: 100%;
+   }
+}
+#startmesage{
+    bottom: 10%;
+    font-size: 17pt;
+    color: rgb(052, 016, 032);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    animation: oscilation 2s infinite;
+}
+#titlescreen{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid rgb(200, 054, 124) ;
+    box-sizing: border-box;
+    background-image: linear-gradient(to left, rgb(200, 054, 124), transparent);
+    
+}
+@keyframes fadediv {
+    100%{
+        opacity: 0;
+    }
+}
+.fadediv{
+    animation: 'fadediv' 1s forwards;
+}
+#warningscreen{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    top: 0px;
+    align-items: center;
+}
+@keyframes popup {
+    100%{
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+.popup{
+    animation: 'popup' 2s forwards;
+}
+@keyframes popdown {
+    100%{
+        transform: translate3d(0px, 1000px, 0px);
+    }
+}
+.popdown{
+    animation: 'popdown' 2s forwards;
+}
+#warning{
+    font-family: 'noticia';
+    height: auto;
+    width: 40%;
+    background-color: white;
+    left: 30%;
+    position: relative;
+    text-align: center;
+    border: 3px solid white;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgb(200, 054, 124);
+    box-shadow: 0px 0px 15px black;
+    background-image: linear-gradient(to top, rgb(149, 145, 145), lightgray, lightgray, lightgray);
+    text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white;
+    font-weight: bold;
+    transform: translate3d(0px, 1000px, 0px);
+    position: fixed;
+    z-index: 3;
+}
+#warningok{
+    font-family: 'noticia';
+    height: auto;
+    width: 40%;
+    background-color: white;
+    left: 30%;
+    position: relative;
+    text-align: center;
+    border: 3px solid white;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgb(200, 054, 124);
+    box-shadow: 0px 0px 15px black;
+    background-image: linear-gradient(to top, rgb(149, 145, 145), lightgray, lightgray, lightgray);
+    text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white;
+    font-weight: bold;
+    transform: translate3d(0px, 1000px, 0px);
+    position: fixed;
+    z-index: 3;
+}
+#system{
+    color: white;
+    text-shadow: 1px 0px black, -1px 0px black, -1px -1px black, 0px -1px black, 0px 1px black, 2px 0px black, -2px 0px black, -2px -2px black, 0px -2px black, 0px 2px black;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+#warningmesage{
+    margin-bottom: 10%;
+}
+#warningmesageok{
+    margin-bottom: 14%;
+}
+#warningbuttons{
+    display: inline-flex;
+    width: 100%;
+    bottom: 0%;
+    height: 31%;
+    left: 0%;
+    position: absolute;
+    font-size: 15pt;
+}
+#okwarningbutton{
+    width: 100%;
+}
+#okwarningbutton:hover{
+    background-image: radial-gradient( lightgray, transparent, transparent);
+}
+#yeswarningbutton{
+    width: 50%;
+}
+#yeswarningbutton:hover{
+    background-image: radial-gradient( lightgray, transparent, transparent);
+} 
+#nowarningbutton{
+    width: 50%;
+}
+#nowarningbutton:hover{
+    background-image: radial-gradient( lightgray, transparent, transparent);
+} 
+#identifierwarning{
+    display: inline-flex;
+}
+#scenescreen{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    top: 0%;
+    display: none;
+}
+#bookmarkchapter{
+    transform: translate3d(-16em, 0em, 0em);
+    position: fixed;
+    font-family: 'unbatang';
+    color: black;
+}
+@keyframes move10 {
+    100%{
+        transform: translate3d(10em, 0em, 0em);
+    }
+}
+@keyframes move20 {
+    100%{
+        transform: translate3d(10em, 0em, 0em);
+    }
+}
+@keyframes move30 {
+    100%{
+        transform: translate3d(10em, 0em, 0em);
+    }
+}
+@keyframes move40 {
+    100%{
+        transform: translate3d(10em, 0em, 0em);
+    }
+}
+@keyframes move50 {
+    100%{
+        transform: translate3d(10em, 0em, 0em);
+    }
+}
+@keyframes move60 {
+    100%{
+        transform: translate3d(10em, 0em, 0em);
+    }
+}
+@keyframes move300 {
+    100%{
+        transform: translate3d(300em, 0em, 0em);
+    }
+}
+.move10{
+    animation: 'move10' 1s forwards;
+}
+.move20{
+    animation: 'move20' 1s forwards;
+}
+.move30{
+    animation: 'move30' 1s forwards;
+}
+.move40{
+    animation: 'move40' 1s forwards;
+}
+.move50{
+    animation: 'move50' 1s forwards;
+}
+.move60{
+    animation: 'move60' 1s forwards;
+}
+.move300{
+    animation: 'move300' 1s forwards;
+}
+#flagform{
+    clip-path: polygon(0% 0%, 100% 0, 80% 35%, 100% 80%, 0 75%, 0 0);
+    background-color: red;
+    height: 4em;
+    width: 16em;
+    background-image: linear-gradient(to left, pink, crimson);
+    align-content: center;
+    display: flex;
+    margin-top: 0px;
+}
+#flagformshadow{
+    box-shadow: 0px 0px 2px black;
+}
+#bookmarktext{
+    margin-top: 0px;
+    width: 85%;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    font-size: 19pt;
+    top: 9%;
+    color: white;
+    text-shadow: 3px 1px black, 0px 0px 6px black;
+}
+#characterspallet{
+    height: 100%;
+    width: 100%;
+}
+#QUEEN{
+    background-image: url("images/queen_normal.webp") ,url("images/queen.webp");
+    background-repeat: no-repeat;
+    height: 45em;
+    width: 58em;
+    position: absolute;
+    bottom: -21%;
+    background-size: 78%;
+    left: -35%;
+}
+#KALLISTO{
+    background-image: url("images/kallisto.webp");
+    background-repeat: no-repeat;
+    height: 45em;
+    width: 58em;
+    position: absolute;
+    bottom: -7%;
+    background-size: contain;
+    transform: translate3d(-10em, 0px, 0px);
+}
+#PENELOPE{
+    background-image: url("images/penelopefaceless2.webp");
+    background-repeat: no-repeat;
+    height: 45em;
+    width: 58em;
+    position: absolute;
+    bottom: -21%;
+background-size: 36%;
+    left: -35%;
+}
+#DERRICK{
+    background-image: url("images/boy.png");
+    background-repeat: no-repeat;
+    height: 45em;
+    width: 58em;
+    position: absolute;
+    bottom: -7%;
+    background-size: contain;
+    left: -35%;
+}
+#choices{
+    display: block;
+    position: absolute;
+    top: 11%;
+    height: 28em;
+    width: 28em;
+    left: 34%;
+    z-index: 5;
+    transform: translate3d(0px, 1000px, 0px);
+}
+.choice{
+    position: relative;
+    height: 11%;
+    width: 80%;
+    /*background-color: rgb(234, 226, 210);*/
+    top: 5%;
+    left: 5%;
+    box-shadow: 7px 5px 4px;
+    background-image: linear-gradient(to right, #827f7f, #827f7f, transparent);
+    border-radius: 6px;
+}
+.choice:hover{
+    background-image: linear-gradient(to right, lightgray, lightgray, transparent);
+}
+.choicetext{  
+    text-align: center;
+    top: 17%;
+    position: relative;
+    font-family: "unbatang";
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 2px 1px black;
+}
+.choicenumber{
+    position: relative;
+    height: 10%;
+    top: 21%;
+    width: 10%;
+    background-color: darkgray;
+    transform: rotate(45deg);
+    border-radius: 8px;
+    right: 8%;
+}
+#choice1number{
+    top: 21%;
+}
+#choice2number{
+    top: 12%;
+}
+#choice3number{
+    top: 4%;
+}
+#choice4number{
+    top: -3%;
+    display: none;
+}
+#choice2{
+    top: -3%;
+}
+#choice3{
+    top: -11%;
+}
+#choice4{
+    top: -19%;
+    display: none;
+}
+.choicenumbernumbers{
+    transform: rotate(-45deg);
+    text-align: center;
+    right: 7%;
+    position: relative;
+    top: 15%;
+    font-family: 'unbatang';
+    font-size: 18pt;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 1px black, 2px 0px black;
+}
+#console{
+    width: 20em;
+    height: 11em;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 4;
+}
+#consoletext{
+    color: red;
+}
+#textbox{
+    width: 66em;
+    height: 12em;
+    background-image: url("datesim_textboxkallisto.webp");
+    bottom: 5%;
+    position: absolute;
+    left: 9%;
+    background-size: cover;
+    transform: translate3d(0%, 113%, 0);
+    background-color: red;
+    box-shadow: 0px 0px 15px black;
+    background-image: linear-gradient(to top, rgb(149, 145, 145), lightgray, lightgray, lightgray);
+    text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white;
+    font-weight: bold;
+    /*background-color: pink;
+box-shadow: 0px 0px 15px black;
+background-image: linear-gradient(to top, rgba(220, 20, 60, 0.5), rgba(255, 194, 194, 0.5), rgba(255, 194, 194, 0.5), rgba(211, 211, 211, 0.5));*/
+}
+.textbox{
+    animation: "goingup" 1s forwards;
+    -webkit-animation: "goingup" 1s forwards;
+}
+@keyframes goingup {
+    100%{
+        transform: translate3d(0%, 0%, 0);
+    }
+}/*
+#namesimdropshadow{
+    filter: drop-shadow(10px 10px white);
+    position: relative;
+left: -3%;
+bottom: 30%;
+}*/
+#namesim{
+    font-size: 29pt;
+    font-family: 'noticia';
+    position: relative;
+    left: 16%;
+    bottom: 7%;
+    text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white, -3px -3px black;
+/*
+text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white, -3px -3px black;
+background-color: pink;*/
+box-shadow: 0px 0px 15px black;
+/*background-image: linear-gradient(to top, rgba(220, 20, 60, 0.5), rgba(255, 194, 194, 0.5), rgba(255, 194, 194, 0.5), rgba(211, 211, 211, 0.5));*/
+width: 33%;
+text-align: center;
+/*clip-path: polygon(8% 10%, 90% 5%, 100% 50%, 90% 95%, 8% 95%, 0% 50%);*/
+height: 25%;
+left: -3%;
+bottom: 30%;
+left: 1%;
+top: -14%;
+position: absolute;
+}
+#textsim1{
+    font-family: 'unbatang';
+    font-size: 16pt;
+    position: relative;
+    left: 6%;
+    bottom: -26%;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .15em;
+}
+#textsim2{
+    font-family: 'unbatang';
+    font-size: 16pt;
+    position: relative;
+    left: 6%;
+    bottom: -16%;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .15em;
+}
+#textsim3{
+    font-family: 'unbatang';
+    font-size: 16pt;
+    position: relative;
+    left: 6%;
+    bottom: -4%;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .15em;
+}
+#textsim4{
+    font-family: 'unbatang';
+    font-size: 16pt;
+    position: relative;
+    left: 6%;
+    bottom: 7%;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .15em;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+.textsim1{
+    animation: 
+        'typing' 3.5s steps(40, end) forwards;
+}
+.textsim2{
+    animation: 
+        'typing' 3.5s 3.2s steps(40, end) forwards;
+}
+.textsim3{
+    animation: 
+        'typing' 3.5s 4s steps(40, end) forwards;
+}
+.textsim4{
+    animation: 
+        'typing' 3.5s 6.5s steps(40, end) forwards;
+}
+#blinkbitch{
+    position: absolute;
+right: 17%;
+bottom: 7%;
+font-size: 1.4em;
+opacity: 0%;
+}
+.blinkbitch{
+animation: 'blinking' 2s infinite linear;
+-webkit-animation: 'blinking' 2s infinite ease-in-out;
+}
+@keyframes blinking {
+0%{
+    opacity: 0%;
+    right: 17%;
+}
+50%{
+    opacity: 100%;
+    right: 16%;
+}
+100%{
+    opacity: 0%;
+    right: 17%;
+}
+}
+#credits{
+    top: 0px;
+position: fixed;
+height: 100%;
+width: 100%;
+color: white;
+text-align: center;
+font-family: 'noticia';
+transform: translate3d(0px, 3000px, 0px);
+}
+@keyframes movechr1 {
+    100%{
+    transform: translate3d(0em, 0px, 0px);
+    }
+ }
+ .movechr0{
+     animation: 'movechr0' 1s linear forwards;
+ }
+@keyframes movechr1 {
+   100%{
+   transform: translate3d(29em, 0px, 0px);
+   }
+}
+.movechr1{
+    animation: 'movechr1' 1s linear forwards;
+}
+@keyframes movechr2 {
+    100%{
+    transform: translate3d(43em, 0px, 0px);
+    }
+}
+.movechr2{
+    animation: 'movechr2' 1s linear forwards;
+}
+ @keyframes movechr3 {
+    100%{
+    transform: translate3d(57em, 0px, 0px);
+    }
+}
+.movechr3{
+    animation: 'movechr3' 1s linear forwards;
+}
+ @keyframes movechr4 {
+    100%{
+    transform: translate3d(71em, 0px, 0px);
+    }
+}
+.movechr4{
+    animation: 'movechr4' 1s linear forwards;
+}
+ @keyframes movechr5 {
+   100%{
+   transform: translate3d(85em, 0px, 0px);
+   }
+}
+.movechr5{
+    animation: 'movechr5' 1s linear forwards;
+}
+@keyframes movechr6 {
+    100%{
+    transform: translate3d(99em, 0px, 0px);
+    }
+}
+.movechr6{
+    animation: 'movechr6' 1s linear forwards;
+}
+#dummy{
+    position: fixed;
+    height: 0px;
+    width: 0px;
+    overflow: none;
+    background-image: url('images/queen_angry.webp'), url('images/queen_scared.webp'), url('images/queen_surprised.webp'), url('images/queen_embarressed.webp'), url('images/queen_normal.webp');
+}
