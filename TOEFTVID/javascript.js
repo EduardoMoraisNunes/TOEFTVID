@@ -1,9 +1,17 @@
 title = document.getElementById('titlescreen')
 var linereading = -1
+jsonfile = "lines.json"
 popup = new Audio('songs/popup(new).ogg')
 popupno = new Audio('songs/no(new).ogg')
 popupyes = new Audio('songs/yes(new).ogg')
 credits = new Audio('songs/AutumnRaccoon.m4a')
+banquet = new Audio('songs/ElegantEntrance.m4a')
+banquet.preload
+popup.preload
+popupno.preload
+popupyes.preload
+new Image().src = 'images/penelope_unsatisfied.webp';
+new Image().src = 'images/penelope.webp';
 
 credits.loop = true
 function fade(){
@@ -43,57 +51,73 @@ function startscene() {
     document.getElementById('scenescreen').style.display = 'block'
 }
 function characterspawn(){
-    document.getElementById(scenecharacter).style.display = 'block'
-    document.getElementById(scenecharacter).style.backgroundImage = 'url(images/'+scenecharacter+'_'+sceneexpression+'.webp), url(images/'+scenecharacter+'.webp)' 
   
+  readlines()
+    document.getElementById(scenecharacter).style.display = 'block'
+    expre = scenecharacter + '_expre'
+    body = scenecharacter + '_body'
+    JSON.stringify(expre)
+    console.log(expre)
+    document.getElementById(expre).src = 'images/'+scenecharacter+'_'+sceneexpression+'.webp' 
+    document.getElementById(body).src = 'images/'+scenecharacter+'.webp' 
+    scenecharactermove = scenecharacter
     if (scenemove === 0) {
       document.getElementById(scenecharacter).classList = 'movechr0'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(0em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(0em, 0px, 0px)'
       }, 1000);
     }
     if (scenemove === 1) {
-      document.getElementById(scenecharacter).classList = 'movechr1'
+      document.getElementById(scenecharactermove).classList = 'movechr1'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(29em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(29em, 0px, 0px)'
       }, 1000);
     }
     if (scenemove === 2) {
-      document.getElementById(scenecharacter).classList = 'movechr2'
+      document.getElementById(scenecharactermove).classList = 'movechr2'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(43em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(43em, 0px, 0px)'
       }, 1000);
     }
     if (scenemove === 3) {
-      document.getElementById(scenecharacter).classList = 'movechr3'
+      document.getElementById(scenecharactermove).classList = 'movechr3'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(57em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(57em, 0px, 0px)'
       }, 1000);
     }
     if (scenemove === 4) {
-      document.getElementById(scenecharacter).classList = 'movechr4'
+      document.getElementById(scenecharactermove).classList = 'movechr4'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(71em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(71em, 0px, 0px)'
       }, 1000);
     }
     if (scenemove === 5) {
-      document.getElementById(scenecharacter).classList = 'movechr5'
+      document.getElementById(scenecharactermove).classList = 'movechr5'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(85em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(85em, 0px, 0px)'
       }, 1000);
     }
     if (scenemove === 6) {
-      document.getElementById(scenecharacter).classList = 'movechr6'
+      document.getElementById(scenecharactermove).classList = 'movechr6'
       setTimeout(() => {
-        document.getElementById(scenecharacter).style.transform = 'translate3d(99em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(99em, 0px, 0px)'
       }, 1000);
     }
-    readlines()
+    if (scenemove === 7) {
+      document.getElementById(scenecharactermove).classList = 'movechr7'
+      setTimeout(() => {
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(113em, 0px, 0px)'
+      }, 1000);
+    }
 }
 
 function textspawn(){
     document.getElementById('textbox').classList.add("textbox")
     document.getElementById('namesim').innerHTML = scenecharacter 
+    document.getElementById('textsim1').style.width = '0%'
+    document.getElementById('textsim2').style.width = '0%'
+    document.getElementById('textsim3').style.width = '0%'
+    document.getElementById('textsim4').style.width = '0%'
     if (scenenoflines === '1') {
       document.getElementById('textsim1').classList.remove("textsim1")
       void document.getElementById('textsim1').offsetWidth;
@@ -105,6 +129,7 @@ function textspawn(){
       void document.getElementById('textsim4').offsetWidth;
       document.getElementById('textsim1').innerHTML = sceneline1
       document.getElementById('textsim1').classList.add("textsim1")
+      document.getElementById('textsim1').addEventListener("animationend", textcontinue)
     }
     if (scenenoflines === '2') {
       document.getElementById('textsim1').classList.remove("textsim1")
@@ -119,6 +144,7 @@ function textspawn(){
       document.getElementById('textsim1').classList.add("textsim1")
       document.getElementById('textsim2').innerHTML = sceneline2
       document.getElementById('textsim2').classList.add("textsim2")
+      document.getElementById('textsim2').addEventListener("animationend", textcontinue)
     }
     if (scenenoflines === '3') {
       document.getElementById('textsim1').classList.remove("textsim1")
@@ -135,6 +161,7 @@ function textspawn(){
       document.getElementById('textsim2').classList.add("textsim2")
       document.getElementById('textsim3').innerHTML = sceneline3
       document.getElementById('textsim3').classList.add("textsim3")
+      document.getElementById('textsim3').addEventListener("animationend", textcontinue)
     }
     if (scenenoflines === '4') {
       document.getElementById('textsim1').classList.remove("textsim1")
@@ -153,11 +180,85 @@ function textspawn(){
       document.getElementById('textsim3').classList.add("textsim3")
       document.getElementById('textsim4').innerHTML = sceneline4
       document.getElementById('textsim4').classList.add("textsim4")
+      document.getElementById('textsim4').addEventListener("animationend", textcontinue)
     }
+    document.getElementById('textbox').addEventListener('click', skiptext)
+}
+function skiptext() {
+  document.getElementById('textbox').removeEventListener('click', skiptext)
+  if (scenenoflines === '1') {
+    document.getElementById('textsim1').classList.remove("textsim1")
+    void document.getElementById('textsim1').offsetWidth;
+    document.getElementById('textsim1').style.width = 'max-content'
+  }
+  if (scenenoflines === '2') {
+    document.getElementById('textsim1').classList.remove("textsim1")
+    void document.getElementById('textsim1').offsetWidth;
+    document.getElementById('textsim1').style.width = 'max-content'
+    document.getElementById('textsim2').classList.remove("textsim2")
+    void document.getElementById('textsim2').offsetWidth;
+    document.getElementById('textsim2').style.width = 'max-content'
+  }
+  if (scenenoflines === '3') {
+    document.getElementById('textsim1').classList.remove("textsim1")
+    void document.getElementById('textsim1').offsetWidth;
+    document.getElementById('textsim1').style.width = 'max-content'
+    document.getElementById('textsim2').classList.remove("textsim2")
+    void document.getElementById('textsim2').offsetWidth;
+    document.getElementById('textsim2').style.width = 'max-content'
+    document.getElementById('textsim3').classList.remove("textsim3")
+    void document.getElementById('textsim3').offsetWidth;
+    document.getElementById('textsim3').style.width = 'max-content'
+  }
+  if (scenenoflines === '4') {
+    document.getElementById('textsim1').classList.remove("textsim1")
+    void document.getElementById('textsim1').offsetWidth;
+    document.getElementById('textsim1').style.width = 'max-content'
+    document.getElementById('textsim2').classList.remove("textsim2")
+    void document.getElementById('textsim2').offsetWidth;
+    document.getElementById('textsim2').style.width = 'max-content'
+    document.getElementById('textsim3').classList.remove("textsim3")
+    void document.getElementById('textsim3').offsetWidth;
+    document.getElementById('textsim3').style.width = 'max-content'
+    document.getElementById('textsim4').classList.remove("textsim4")
+    void document.getElementById('textsim4').offsetWidth;
+    document.getElementById('textsim4').style.width = 'max-content'
+  }
+  document.getElementById('textbox').addEventListener("click", boxclicked)
+  document.getElementById('blinker').classList.add("blinker")
+}
+function textcontinue() {
+  if (scenenoflines === '1') {
+    document.getElementById('textbox').removeEventListener('click', skiptext)
+    document.getElementById('textsim1').removeEventListener("animationend", textcontinue)
     document.getElementById('textbox').addEventListener("click", boxclicked)
+    document.getElementById('blinker').classList.add("blinker")
+    console.log('ANIMATION ENDED')
+  }
+  if (scenenoflines === '2') {
+    document.getElementById('textbox').removeEventListener('click', skiptext)
+    document.getElementById('textsim2').removeEventListener("animationend", textcontinue)
+    document.getElementById('textbox').addEventListener("click", boxclicked)
+    document.getElementById('blinker').classList.add("blinker")
+  }
+  if (scenenoflines === '3') {
+    document.getElementById('textbox').removeEventListener('click', skiptext)
+    document.getElementById('textsim3').removeEventListener("animationend", textcontinue)
+    document.getElementById('textbox').addEventListener("click", boxclicked)
+    document.getElementById('blinker').classList.add("blinker")
+  }
+  if (scenenoflines === '4') {
+    document.getElementById('textbox').removeEventListener('click', skiptext)
+    document.getElementById('textsim4').removeEventListener("animationend", textcontinue)
+    document.getElementById('textbox').addEventListener("click", boxclicked)
+    document.getElementById('blinker').classList.add("blinker")
+  }
+  document.getElementById('textbox').addEventListener("click", boxclicked)
 }
 function boxclicked() {
   document.getElementById('textbox').removeEventListener("click", boxclicked)
+  
+  document.getElementById('blinker').classList.remove("blinker")
   readlines()
 }
 function sysspawn(){
@@ -290,7 +391,7 @@ function chapterendspawn() {
   document.getElementById('credits').classList = 'popup'
 }
 function readlines() {
-    fetch("lines.json")
+    fetch(jsonfile)
     .then(function(resp){
         return resp.json()
     })

@@ -14,7 +14,7 @@
         <p id="startmesage">Clique para começar!</p>
     </div>
     <div id="warningscreen">
-        <div id="warning">
+        <div class="warning" id="warning">
             <div id="identifierwarning">
                 <p class="losangulowarning">
                     &#x25C6; &nbsp;
@@ -28,10 +28,10 @@
             <p id="warningmesage">UM SAVE FILE FOI ENCONTRADO, DESEJA CONTINUAR?</p>
             <div id="warningbuttons">
                 <div id="yeswarningbutton">
-                    <p>&#x25C6;SIM&#x25C6;</p>
+                    <p class="btntext">&#x25C6;SIM&#x25C6;</p>
                 </div>
                 <div id="nowarningbutton">
-                    <p>&#x25C6;NÃO&#x25C6;</p>
+                    <p class="btntext" >&#x25C6;NÃO&#x25C6;</p>
                 </div>
             </div>
         </div>
@@ -77,21 +77,38 @@
             </div>
         </div>
         <div id="characterspallet">
-            <div id="KALLISTO"></div>
-            <div id="QUEEN"></div>
-            <div id="2PRINCE"></div>
-            <div id="PENELOPE"></div>
-            <div id="DERRICK"></div>
+            <div id="KALLISTO">
+                <img class="chrbody" id="KALLISTO_body" src="" alt="">
+                <img class="chrface" id="KALLISTO_expre" src="" alt="">
+            </div>
+            <div id="QUEEN">
+                <img class="chrbody" id="QUEEN_body" src="" alt="">
+                <img class="chrface" id="QUEEN_expre" src="" alt="">
+            </div>
+            <div id="PRINCE">
+                <img class="chrbody" id="PRINCE_body" src="" alt="">
+                <img class="chrface" id="PRINCE_expre" src="" alt="">
+            </div>
+            <div id="PENELOPE">
+                <img class="chrbody" id="PENELOPE_body" loading="eager" src="images/penelope.webp" alt="">
+                <img class="chrface" id="PENELOPE_expre" loading="eager" src="images/penelope_unsatisfied.webp" alt="">
+            </div>
+            <div id="DERRICK">
+                <img class="chrbody" id="DERRICK_body" src="" alt="">
+                <img class="chrface" id="DERRICK_expre" src="" alt="">
+            </div>
         </div>
-        <div id="textbox">
-            <div id="namesimdropshadow">
-            <p id="namesim">CHARSNAME</p>
-        </div>
-            <p id="textsim1"></p>
-            <p id="textsim2"></p>
-            <p id="textsim3"></p>
-            <p id="textsim4"></p>
-            <p id="blinkbitch">▶</p>
+        <div id="textboxwrap">
+            <div id="textbox">
+                <div id="namesimdropshadow">
+                    <p id="namesim">CHARSNAME</p>
+                </div>
+                <p id="textsim1"></p>
+                <p id="textsim2"></p>
+                <p id="textsim3"></p>
+                <p id="textsim4"></p>
+                <p id="blinker">▶</p>
+            </div>
         </div>
     </div>
     <div id="choices">
@@ -125,7 +142,6 @@
             ERRO "TOEFTVID/index/javascript.js", LINHA 639, FALHOU EM  CARREGAR savefilesconfig, VER CONSOLE REAL PARA RASTREAMENTO <br> PRESSIONE F5 PARA RENICIAR O JOGO
         </p>
     </div>
-    <div id="dummy"></div>
     <script src="javascript.js"></script>
 </body>
 </html>

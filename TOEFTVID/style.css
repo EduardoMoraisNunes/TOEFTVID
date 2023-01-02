@@ -88,6 +88,7 @@ body, html{
     display: flex;
     top: 0px;
     align-items: center;
+    justify-content: center;
 }
 @keyframes popup {
     100%{
@@ -108,9 +109,7 @@ body, html{
 #warning{
     font-family: 'noticia';
     height: auto;
-    width: 40%;
     background-color: white;
-    left: 30%;
     position: relative;
     text-align: center;
     border: 3px solid white;
@@ -124,13 +123,12 @@ body, html{
     transform: translate3d(0px, 1000px, 0px);
     position: fixed;
     z-index: 3;
+    max-width: 23em;
 }
 #warningok{
     font-family: 'noticia';
     height: auto;
-    width: 40%;
     background-color: white;
-    left: 30%;
     position: relative;
     text-align: center;
     border: 3px solid white;
@@ -144,6 +142,7 @@ body, html{
     transform: translate3d(0px, 1000px, 0px);
     position: fixed;
     z-index: 3;
+    max-width: 23em;
 }
 #system{
     color: white;
@@ -153,6 +152,7 @@ body, html{
 }
 #warningmesage{
     margin-bottom: 10%;
+    margin-top: 0%;
 }
 #warningmesageok{
     margin-bottom: 14%;
@@ -161,13 +161,17 @@ body, html{
     display: inline-flex;
     width: 100%;
     bottom: 0%;
-    height: 31%;
     left: 0%;
     position: absolute;
     font-size: 15pt;
+    margin: 0%;
+    margin-bottom: 2%;
 }
 #okwarningbutton{
     width: 100%;
+}
+.btntext{
+    margin: inherit;
 }
 #okwarningbutton:hover{
     background-image: radial-gradient( lightgray, transparent, transparent);
@@ -194,6 +198,7 @@ body, html{
     background-color: black;
     top: 0%;
     display: none;
+    user-select: none;
 }
 #bookmarkchapter{
     transform: translate3d(-16em, 0em, 0em);
@@ -285,45 +290,72 @@ body, html{
     height: 100%;
     width: 100%;
 }
-#QUEEN{
-    background-image: url("images/queen_normal.webp") ,url("images/queen.webp");
-    background-repeat: no-repeat;
-    height: 45em;
-    width: 58em;
+.chrbody{
+    height: 100%;
+    width: 100%;
     position: absolute;
-    bottom: -21%;
-    background-size: 78%;
+}
+.chrface{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+#QUEEN{
+    height: 51em;
+    width: 40em;
+    position: absolute;
+    bottom: -31%;
     left: -35%;
+    border: 0px;
+}
+#PRINCE{
+    height: 57em;
+    width: 48em;
+    position: absolute;
+    bottom: -33%;
+    left: -35%;
+    border: 0px;
+}
+#Boy{
+    height: 52em;
+    width: 22em;
+    position: absolute;
+    bottom: -17%;
+    transform: translate3d(-10em, 0px, 0px);
+    border: 0px;
 }
 #KALLISTO{
-    background-image: url("images/kallisto.webp");
-    background-repeat: no-repeat;
-    height: 45em;
-    width: 58em;
+    height: 52em;
+    width: 22em;
     position: absolute;
-    bottom: -7%;
-    background-size: contain;
+    bottom: -17%;
     transform: translate3d(-10em, 0px, 0px);
+    border: 0px;
 }
-#PENELOPE{
-    background-image: url("images/penelopefaceless2.webp");
-    background-repeat: no-repeat;
-    height: 45em;
-    width: 58em;
+#Girl{
+    height: 47em;
+    width: 37em;
     position: absolute;
     bottom: -21%;
-background-size: 36%;
+    border: 0px;
+    left: -35%;
+}
+#PENELOPE{
+    height: 47em;
+    width: 37em;
+    position: absolute;
+    bottom: -21%;
+    border: 0px;
     left: -35%;
 }
 #DERRICK{
-    background-image: url("images/boy.png");
-    background-repeat: no-repeat;
     height: 45em;
     width: 58em;
     position: absolute;
     bottom: -7%;
-    background-size: contain;
+    border: 0px;
     left: -35%;
+    display: none;
 }
 #choices{
     display: block;
@@ -415,6 +447,15 @@ background-size: 36%;
 }
 #consoletext{
     color: red;
+}
+#textboxwrap{
+    position: absolute;
+bottom: 5%;
+width: 100%;
+height: 38%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 #textbox{
     width: 66em;
@@ -529,35 +570,35 @@ position: absolute;
 }
 .textsim3{
     animation: 
-        'typing' 3.5s 4s steps(40, end) forwards;
+        'typing' 3.5s 4.3s steps(40, end) forwards;
 }
 .textsim4{
     animation: 
         'typing' 3.5s 6.5s steps(40, end) forwards;
 }
-#blinkbitch{
+#blinker{
     position: absolute;
-right: 17%;
-bottom: 7%;
+right: 2%;
+bottom: -9%;
 font-size: 1.4em;
 opacity: 0%;
 }
-.blinkbitch{
+.blinker{
 animation: 'blinking' 2s infinite linear;
 -webkit-animation: 'blinking' 2s infinite ease-in-out;
 }
 @keyframes blinking {
 0%{
     opacity: 0%;
-    right: 17%;
+    right: 3%;
 }
 50%{
     opacity: 100%;
-    right: 16%;
+    right: 2%;
 }
 100%{
     opacity: 0%;
-    right: 17%;
+    right: 3%;
 }
 }
 #credits{
@@ -570,9 +611,9 @@ text-align: center;
 font-family: 'noticia';
 transform: translate3d(0px, 3000px, 0px);
 }
-@keyframes movechr1 {
+@keyframes movechr0 {
     100%{
-    transform: translate3d(0em, 0px, 0px);
+    transform: translate3d(-20em, 0px, 0px);
     }
  }
  .movechr0{
@@ -623,13 +664,11 @@ transform: translate3d(0px, 3000px, 0px);
     transform: translate3d(99em, 0px, 0px);
     }
 }
+@keyframes movechr7 {
+    100%{
+    transform: translate3d(113em, 0px, 0px);
+    }
+}
 .movechr6{
     animation: 'movechr6' 1s linear forwards;
-}
-#dummy{
-    position: fixed;
-    height: 0px;
-    width: 0px;
-    overflow: none;
-    background-image: url('images/queen_angry.webp'), url('images/queen_scared.webp'), url('images/queen_surprised.webp'), url('images/queen_embarressed.webp'), url('images/queen_normal.webp');
 }

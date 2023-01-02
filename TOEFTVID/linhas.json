@@ -1,0 +1,9 @@
+[
+    {"type": "ambience", "channel": 1, "loop": 1,"action": "play", "character": "HereTheyCome.m4a"},
+    
+    {"type": "chrline", "character": "KALLISTO", "noflines": "1", "line1": "Te trouxe um presente!"},
+    {"type": "chrline", "character": "2° PRÍNCIPE", "noflines": "1", "line1": "Um presente? Pour moi?"},
+    {"type": "chrline", "character": "PENELOPE", "noflines": "1", "line1": "(O que está acontecendo?)"},
+    {"type": "chrline", "character": "KALLISTO", "noflines": "1", "line1": "*Concorda com a cabeça*"},
+    {"type": "chapterend"}
+]

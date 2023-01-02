@@ -1,0 +1,15 @@
+[
+{"type": "spawnchr", "character": "Girl", "scenemove": 2, "expression": "unsatisfied"},
+{"type": "spawnchr", "character": "Boy", "scenemove": 2, "expression": "unsatisfied"},
+{"type": "ambience", "channel": 1,"action": "play", "loop": 1,"character": "AutumnRaccoon.m4a"},
+{"type": "chrline", "character": "Boy", "noflines": "1", "line1": "Hey give it back!"},
+{"type": "chrline", "character": "Girl", "noflines": "1", "line1": "Nah-ah-ah! You gotta catch me first!"},
+{"type": "chrline", "character": "Boy", "noflines": "1", "line1": "Wait, don't run!"},
+{"type": "playerchoiceyn", "text": "Keep running?", "yes": 9, "no": 36},
+{"type": "chrline", "character": "Girl", "noflines": "1", "line1": "A-"},
+{"type": "sysmessage", "character": "SISTEMA", "noflines": "1", "line1": "You.. died..."},
+{"type": "chapterend"},
+{"type": "chrline", "character": "Girl", "noflines": "1", "line1": "A-"},
+{"type": "sysmessage", "character": "SISTEMA", "noflines": "1", "line1": "You.. died... ANYWAYS LOL! THERE'S NO HAPPY ENDING"},
+{"type": "chapterend"}
+]
