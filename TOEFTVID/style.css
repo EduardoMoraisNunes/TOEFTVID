@@ -308,16 +308,20 @@ body, html{
     position: absolute;
 }
 #QUEEN{
-    height: 51em;
-    width: 40em;
+    max-height: 51em;
+    max-width: 40em;
+    height: 125%;
+    width: 44%;
     position: absolute;
     bottom: -31%;
     left: -35%;
     border: 0px;
 }
 #PRINCE{
-    height: 57em;
-    width: 48em;
+    max-height: 57em;
+    max-width: 48em;
+    height: 140%;
+    width: 53%;
     position: absolute;
     bottom: -33%;
     left: -35%;
@@ -332,10 +336,12 @@ body, html{
     border: 0px;
 }
 #KALLISTO{
-    height: 52em;
-    width: 22em;
+    max-height: 55em;
+    max-width: 22em;
+    height: 140%;
+    width: 27%;
     position: absolute;
-    bottom: -17%;
+    bottom: -29%;
     transform: translate3d(-10em, 0px, 0px);
     border: 0px;
 }
@@ -348,10 +354,12 @@ body, html{
     left: -35%;
 }
 #PENELOPE{
-    height: 47em;
-    width: 37em;
+    max-height: 47em;
+    max-width: 37em;
+    height: 124%;
+    width: 44%;
     position: absolute;
-    bottom: -21%;
+    bottom: -31%;
     border: 0px;
     left: -35%;
 }
@@ -622,7 +630,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 @keyframes movechr0 {
     100%{
-    transform: translate3d(-20em, 0px, 0px);
+    transform: translate3d(-35%, 0px, 0px);
     }
  }
  .movechr0{
@@ -632,7 +640,7 @@ transform: translate3d(0px, 3000px, 0px);
  }
 @keyframes movechr1 {
    100%{
-   transform: translate3d(29em, 0px, 0px);
+   transform: translate3d(57%, 0px, 0px);
    }
 }
 .movechr1{
@@ -641,7 +649,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 @keyframes movechr2 {
     100%{
-    transform: translate3d(43em, 0px, 0px);
+    transform: translate3d(101%, 0px, 0px);
     }
 }
 .movechr2{
@@ -650,7 +658,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
  @keyframes movechr3 {
     100%{
-    transform: translate3d(57em, 0px, 0px);
+    transform: translate3d(145%, 0px, 0px);
     }
 }
 .movechr3{
@@ -659,7 +667,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
  @keyframes movechr4 {
     100%{
-    transform: translate3d(71em, 0px, 0px);
+    transform: translate3d(189%, 0px, 0px);
     }
 }
 .movechr4{
@@ -668,7 +676,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
  @keyframes movechr5 {
    100%{
-   transform: translate3d(85em, 0px, 0px);
+   transform: translate3d(235%, 0px, 0px);
    }
 }
 .movechr5{
@@ -680,12 +688,16 @@ transform: translate3d(0px, 3000px, 0px);
     transform: translate3d(99em, 0px, 0px);
     }
 }
+.movechr6{
+    animation: 'movechr6' 1s linear forwards;
+    -webkit-animation: 'movechr6' 1s linear forwards
+}
 @keyframes movechr7 {
     100%{
     transform: translate3d(113em, 0px, 0px);
     }
 }
-.movechr6{
-    animation: 'movechr6' 1s linear forwards;
-    -webkit-animation: 'movechr6' 1s linear forwards
+.movechr7{
+    animation: 'movechr7' 1s linear forwards;
+    -webkit-animation: 'movechr7' 1s linear forwards
 }
