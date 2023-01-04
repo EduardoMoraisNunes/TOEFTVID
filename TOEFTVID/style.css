@@ -13,6 +13,9 @@ body, html{
     font-family: 'noticia';
     src: url(fonts/NoticiaText-Regular.ttf);
 }
+@media screen and (max-width: 1000px){
+    
+}
 #titlescreen{
     height: 100%;
     width: 100%;
@@ -62,16 +65,17 @@ body, html{
     width: 100%;
     margin: 0;
     animation: oscilation 2s infinite;
+    -webkit-animation: 'oscilation' 2s infinite;
 }
 #titlescreen{
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: black;
     border: 2px solid rgb(200, 054, 124) ;
     box-sizing: border-box;
-    background-image: linear-gradient(to left, rgb(200, 054, 124), transparent);
+    /*background-image: linear-gradient(to left, rgb(200, 054, 124), transparent);*/
     
 }
 @keyframes fadediv {
@@ -81,6 +85,7 @@ body, html{
 }
 .fadediv{
     animation: 'fadediv' 1s forwards;
+    -webkit-animation: 'fadediv' 1s forwards;
 }
 #warningscreen{
     height: 100%;
@@ -97,6 +102,7 @@ body, html{
 }
 .popup{
     animation: 'popup' 2s forwards;
+    -webkit-animation: 'popup' 2s forwards;
 }
 @keyframes popdown {
     100%{
@@ -105,6 +111,7 @@ body, html{
 }
 .popdown{
     animation: 'popdown' 2s forwards;
+    -webkit-animation: 'popdown' 2s forwards;
 }
 #warning{
     font-family: 'noticia';
@@ -458,12 +465,14 @@ align-items: center;
 justify-content: center;
 }
 #textbox{
-    width: 66em;
-    height: 12em;
+    max-height: 12em;
+    min-height: 9em;
+    max-width: 59em;
+    min-width: 51em;
+    width: 85%;
+    height: 80%;
     background-image: url("datesim_textboxkallisto.webp");
     bottom: 5%;
-    position: absolute;
-    left: 9%;
     background-size: cover;
     transform: translate3d(0%, 113%, 0);
     background-color: red;
@@ -491,11 +500,8 @@ left: -3%;
 bottom: 30%;
 }*/
 #namesim{
-    font-size: 29pt;
+    font-size: 2em;
     font-family: 'noticia';
-    position: relative;
-    left: 16%;
-    bottom: 7%;
     text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white, -3px -3px black;
 /*
 text-shadow: 1px 0px white, -1px 0px white, -1px -1px white, 0px -1px white, 0px 1px white, 2px 0px white, -2px 0px white, -2px -2px white, 0px -2px white, 0px 2px white, -3px -3px black;
@@ -506,17 +512,16 @@ width: 33%;
 text-align: center;
 /*clip-path: polygon(8% 10%, 90% 5%, 100% 50%, 90% 95%, 8% 95%, 0% 50%);*/
 height: 25%;
-left: -3%;
-bottom: 30%;
 left: 1%;
-top: -14%;
+top: 5%;
 position: absolute;
+margin-top: 0;
 }
 #textsim1{
     font-family: 'unbatang';
-    font-size: 16pt;
+    font-size: 1.2em;
     position: relative;
-    left: 6%;
+    left: 4%;
     bottom: -26%;
     width: 0%;
     overflow: hidden;
@@ -525,9 +530,9 @@ position: absolute;
 }
 #textsim2{
     font-family: 'unbatang';
-    font-size: 16pt;
+    font-size: 1.2em;
     position: relative;
-    left: 6%;
+    left: 4%;
     bottom: -16%;
     width: 0%;
     overflow: hidden;
@@ -536,9 +541,9 @@ position: absolute;
 }
 #textsim3{
     font-family: 'unbatang';
-    font-size: 16pt;
+    font-size: 1.2em;
     position: relative;
-    left: 6%;
+    left: 4%;
     bottom: -4%;
     width: 0%;
     overflow: hidden;
@@ -547,9 +552,9 @@ position: absolute;
 }
 #textsim4{
     font-family: 'unbatang';
-    font-size: 16pt;
+    font-size: 1.2em;
     position: relative;
-    left: 6%;
+    left: 4%;
     bottom: 7%;
     width: 0%;
     overflow: hidden;
@@ -563,18 +568,22 @@ position: absolute;
 .textsim1{
     animation: 
         'typing' 3.5s steps(40, end) forwards;
+    -webkit-animation: 'typing' 3.5s steps(40, end) forwards;;
 }
 .textsim2{
     animation: 
         'typing' 3.5s 3.2s steps(40, end) forwards;
+    -webkit-animation: 'typing' 3.5s 3.2s steps(40, end) forwards;;
 }
 .textsim3{
     animation: 
         'typing' 3.5s 4.3s steps(40, end) forwards;
+    -webkit-animation: 'typing' 3.5s 4.3s steps(40, end) forwards;
 }
 .textsim4{
     animation: 
         'typing' 3.5s 6.5s steps(40, end) forwards;
+    -webkit-animation: 'typing' 3.5s 6.5s steps(40, end) forwards;
 }
 #blinker{
     position: absolute;
@@ -618,6 +627,8 @@ transform: translate3d(0px, 3000px, 0px);
  }
  .movechr0{
      animation: 'movechr0' 1s linear forwards;
+     -webkit-animation: 'movechr0' 1s linear forwards
+
  }
 @keyframes movechr1 {
    100%{
@@ -626,6 +637,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 .movechr1{
     animation: 'movechr1' 1s linear forwards;
+    -webkit-animation: 'movechr1' 1s linear forwards
 }
 @keyframes movechr2 {
     100%{
@@ -634,6 +646,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 .movechr2{
     animation: 'movechr2' 1s linear forwards;
+    -webkit-animation: 'movechr2' 1s linear forwards
 }
  @keyframes movechr3 {
     100%{
@@ -642,6 +655,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 .movechr3{
     animation: 'movechr3' 1s linear forwards;
+    -webkit-animation: 'movechr3' 1s linear forwards
 }
  @keyframes movechr4 {
     100%{
@@ -650,6 +664,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 .movechr4{
     animation: 'movechr4' 1s linear forwards;
+    -webkit-animation: 'movechr4' 1s linear forwards
 }
  @keyframes movechr5 {
    100%{
@@ -658,6 +673,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 .movechr5{
     animation: 'movechr5' 1s linear forwards;
+    -webkit-animation: 'movechr5' 1s linear forwards
 }
 @keyframes movechr6 {
     100%{
@@ -671,4 +687,5 @@ transform: translate3d(0px, 3000px, 0px);
 }
 .movechr6{
     animation: 'movechr6' 1s linear forwards;
+    -webkit-animation: 'movechr6' 1s linear forwards
 }

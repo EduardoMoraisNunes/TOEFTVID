@@ -10,8 +10,6 @@ banquet.preload
 popup.preload
 popupno.preload
 popupyes.preload
-new Image().src = 'images/penelope_unsatisfied.webp';
-new Image().src = 'images/penelope.webp';
 
 credits.loop = true
 function fade(){
@@ -114,73 +112,51 @@ function characterspawn(){
 function textspawn(){
     document.getElementById('textbox').classList.add("textbox")
     document.getElementById('namesim').innerHTML = scenecharacter 
+    document.getElementById('textsim1').classList.remove("textsim1")
+    document.getElementById('textsim2').classList.remove("textsim2")
+    document.getElementById('textsim3').classList.remove("textsim3")
+    document.getElementById('textsim4').classList.remove("textsim4")
+    void document.getElementById('textsim1').offsetWidth;
+    void document.getElementById('textsim2').offsetWidth;
+    void document.getElementById('textsim3').offsetWidth;
+    void document.getElementById('textsim4').offsetWidth;
     document.getElementById('textsim1').style.width = '0%'
     document.getElementById('textsim2').style.width = '0%'
     document.getElementById('textsim3').style.width = '0%'
     document.getElementById('textsim4').style.width = '0%'
-    if (scenenoflines === '1') {
-      document.getElementById('textsim1').classList.remove("textsim1")
-      void document.getElementById('textsim1').offsetWidth;
-      document.getElementById('textsim2').classList.remove("textsim2")
-      void document.getElementById('textsim2').offsetWidth;
-      document.getElementById('textsim3').classList.remove("textsim3")
-      void document.getElementById('textsim3').offsetWidth;
-      document.getElementById('textsim4').classList.remove("textsim4")
-      void document.getElementById('textsim4').offsetWidth;
-      document.getElementById('textsim1').innerHTML = sceneline1
-      document.getElementById('textsim1').classList.add("textsim1")
-      document.getElementById('textsim1').addEventListener("animationend", textcontinue)
-    }
-    if (scenenoflines === '2') {
-      document.getElementById('textsim1').classList.remove("textsim1")
-      void document.getElementById('textsim1').offsetWidth;
-      document.getElementById('textsim2').classList.remove("textsim2")
-      void document.getElementById('textsim2').offsetWidth;
-      document.getElementById('textsim3').classList.remove("textsim3")
-      void document.getElementById('textsim3').offsetWidth;
-      document.getElementById('textsim4').classList.remove("textsim4")
-      void document.getElementById('textsim4').offsetWidth;
-      document.getElementById('textsim1').innerHTML = sceneline1
-      document.getElementById('textsim1').classList.add("textsim1")
-      document.getElementById('textsim2').innerHTML = sceneline2
-      document.getElementById('textsim2').classList.add("textsim2")
-      document.getElementById('textsim2').addEventListener("animationend", textcontinue)
-    }
-    if (scenenoflines === '3') {
-      document.getElementById('textsim1').classList.remove("textsim1")
-      void document.getElementById('textsim1').offsetWidth;
-      document.getElementById('textsim2').classList.remove("textsim2")
-      void document.getElementById('textsim2').offsetWidth;
-      document.getElementById('textsim3').classList.remove("textsim3")
-      void document.getElementById('textsim3').offsetWidth;
-      document.getElementById('textsim4').classList.remove("textsim4")
-      void document.getElementById('textsim4').offsetWidth;
-      document.getElementById('textsim1').innerHTML = sceneline1
-      document.getElementById('textsim1').classList.add("textsim1")
-      document.getElementById('textsim2').innerHTML = sceneline2
-      document.getElementById('textsim2').classList.add("textsim2")
-      document.getElementById('textsim3').innerHTML = sceneline3
-      document.getElementById('textsim3').classList.add("textsim3")
-      document.getElementById('textsim3').addEventListener("animationend", textcontinue)
-    }
-    if (scenenoflines === '4') {
-      document.getElementById('textsim1').classList.remove("textsim1")
-      void document.getElementById('textsim1').offsetWidth;
-      document.getElementById('textsim2').classList.remove("textsim2")
-      void document.getElementById('textsim2').offsetWidth;
-      document.getElementById('textsim3').classList.remove("textsim3")
-      void document.getElementById('textsim3').offsetWidth;
-      document.getElementById('textsim4').classList.remove("textsim4")
-      void document.getElementById('textsim4').offsetWidth;
-      document.getElementById('textsim1').innerHTML = sceneline1
-      document.getElementById('textsim1').classList.add("textsim1")
-      document.getElementById('textsim2').innerHTML = sceneline2
-      document.getElementById('textsim2').classList.add("textsim2")
-      document.getElementById('textsim3').innerHTML = sceneline3
-      document.getElementById('textsim3').classList.add("textsim3")
-      document.getElementById('textsim4').innerHTML = sceneline4
-      document.getElementById('textsim4').classList.add("textsim4")
-      document.getElementById('textsim4').addEventListener("animationend", textcontinue)
+    switch (scenenoflines){
+      case '1':
+        document.getElementById('textsim1').innerHTML = sceneline1
+        document.getElementById('textsim1').classList.add("textsim1")
+        document.getElementById('textsim1').addEventListener("animationend", textcontinue)
+      break;
+      case '2':
+        document.getElementById('textsim1').innerHTML = sceneline1
+        document.getElementById('textsim1').classList.add("textsim1")
+        document.getElementById('textsim2').innerHTML = sceneline2
+        document.getElementById('textsim2').classList.add("textsim2")
+        document.getElementById('textsim2').addEventListener("animationend", textcontinue)
+      break;
+      case '3':
+        document.getElementById('textsim1').innerHTML = sceneline1
+        document.getElementById('textsim1').classList.add("textsim1")
+        document.getElementById('textsim2').innerHTML = sceneline2
+        document.getElementById('textsim2').classList.add("textsim2")
+        document.getElementById('textsim3').innerHTML = sceneline3
+        document.getElementById('textsim3').classList.add("textsim3")
+        document.getElementById('textsim3').addEventListener("animationend", textcontinue)
+      break;
+      case '4':
+        document.getElementById('textsim1').innerHTML = sceneline1
+        document.getElementById('textsim1').classList.add("textsim1")
+        document.getElementById('textsim2').innerHTML = sceneline2
+        document.getElementById('textsim2').classList.add("textsim2")
+        document.getElementById('textsim3').innerHTML = sceneline3
+        document.getElementById('textsim3').classList.add("textsim3")
+        document.getElementById('textsim4').innerHTML = sceneline4
+        document.getElementById('textsim4').classList.add("textsim4")
+        document.getElementById('textsim4').addEventListener("animationend", textcontinue)
+      break;
     }
     document.getElementById('textbox').addEventListener('click', skiptext)
 }
@@ -188,40 +164,30 @@ function skiptext() {
   document.getElementById('textbox').removeEventListener('click', skiptext)
   if (scenenoflines === '1') {
     document.getElementById('textsim1').classList.remove("textsim1")
-    void document.getElementById('textsim1').offsetWidth;
     document.getElementById('textsim1').style.width = 'max-content'
   }
   if (scenenoflines === '2') {
     document.getElementById('textsim1').classList.remove("textsim1")
-    void document.getElementById('textsim1').offsetWidth;
     document.getElementById('textsim1').style.width = 'max-content'
     document.getElementById('textsim2').classList.remove("textsim2")
-    void document.getElementById('textsim2').offsetWidth;
     document.getElementById('textsim2').style.width = 'max-content'
   }
   if (scenenoflines === '3') {
     document.getElementById('textsim1').classList.remove("textsim1")
-    void document.getElementById('textsim1').offsetWidth;
     document.getElementById('textsim1').style.width = 'max-content'
     document.getElementById('textsim2').classList.remove("textsim2")
-    void document.getElementById('textsim2').offsetWidth;
     document.getElementById('textsim2').style.width = 'max-content'
     document.getElementById('textsim3').classList.remove("textsim3")
-    void document.getElementById('textsim3').offsetWidth;
     document.getElementById('textsim3').style.width = 'max-content'
   }
   if (scenenoflines === '4') {
     document.getElementById('textsim1').classList.remove("textsim1")
-    void document.getElementById('textsim1').offsetWidth;
     document.getElementById('textsim1').style.width = 'max-content'
     document.getElementById('textsim2').classList.remove("textsim2")
-    void document.getElementById('textsim2').offsetWidth;
     document.getElementById('textsim2').style.width = 'max-content'
     document.getElementById('textsim3').classList.remove("textsim3")
-    void document.getElementById('textsim3').offsetWidth;
     document.getElementById('textsim3').style.width = 'max-content'
     document.getElementById('textsim4').classList.remove("textsim4")
-    void document.getElementById('textsim4').offsetWidth;
     document.getElementById('textsim4').style.width = 'max-content'
   }
   document.getElementById('textbox').addEventListener("click", boxclicked)
@@ -398,68 +364,59 @@ function readlines() {
     .then(function(data){
       scenetype = (data[linereading].type)
       scenecharacter = (data[linereading].character)
-      sceneline1 = (data[linereading].line1)
-      sceneline2 = (data[linereading].line2)
-      sceneline3 = (data[linereading].line3)
-      sceneline4 = (data[linereading].line4)
-      scenenoflines = (data[linereading].noflines)
-      scenetext = (data[linereading].text)
-      sceneyes = (data[linereading].yes)
-      sceneno = (data[linereading].no)
-      sceneexpression = (data[linereading].expression)
-      scenemove = (data[linereading].scenemove)
-      sceneend = (data[linereading].chapterend)
-      sceneaction = (data[linereading].action)
-      scenetext1 = (data[linereading].text1)
-      scenetext2 = (data[linereading].text2)
-      scenetext3 = (data[linereading].text3)
-      sceneop1 = (data[linereading].op1)
-      sceneop2 = (data[linereading].op2)
-      sceneop3 = (data[linereading].op3)
-      sceneto = (data[linereading].to)
-      scenechannel = (data[linereading].channel)
-      sceneloop = (data[linereading].loop)
-      console.log(scenetype)
-      console.log(scenecharacter)
-      console.log(sceneline1)
-      console.log(sceneline2)
-      console.log(sceneline3)
-      console.log(sceneline4)
-      console.log(scenetext)
-      console.log(sceneyes)
-      console.log(sceneno)
-      console.log(sceneexpression)
-      console.log(scenemove)
-      console.log(scenetext1)
-      console.log(scenetext2)
-      console.log(scenetext3)
-      console.log(sceneop1)
-      console.log(sceneop2)
-      console.log(sceneop3)
-      console.log(sceneto)
-      if (scenetype === 'spawnchr') {
-        characterspawn()
-      }
-      if (scenetype === 'chrline') {
-        textspawn()
-      }
-      if (scenetype === 'sysmessage') {
-        sysspawn()
-      }
-      if (scenetype === 'playerchoiceyn') {
-        ynspawn()
-      }
-      if (scenetype === 'chapterend') {
-        chapterendspawn()
-      }
-      if (scenetype === 'ambience') {
-        ambiencespawn()
-      }
-      if (scenetype === 'playerchoices') {
-        playerchoicespawn()
-      }
-      if (scenetype === 'tieline') {
-        tielinespawn()
+      switch (scenetype){
+        case 'spawnchr':
+          sceneexpression = (data[linereading].expression)
+          scenemove = (data[linereading].scenemove)
+          characterspawn()
+        break;
+        case 'chrline':
+          scenenoflines = (data[linereading].noflines)
+          sceneline1 = (data[linereading].line1)
+          sceneline2 = (data[linereading].line2)
+          sceneline3 = (data[linereading].line3)
+          sceneline4 = (data[linereading].line4)
+          textspawn()
+        break;
+        case 'sysmessage':
+          scenenoflines = (data[linereading].noflines)
+          sceneline1 = (data[linereading].line1)
+          sceneline2 = (data[linereading].line2)
+          sceneline3 = (data[linereading].line3)
+          sceneline4 = (data[linereading].line4)
+          sysspawn()
+        break;
+        case 'playerchoiceyn':
+          scenetext = (data[linereading].text)
+          sceneyes = (data[linereading].yes)
+          sceneno = (data[linereading].no)
+          ynspawn()
+        break;
+        case 'chapterend':
+          sceneend = (data[linereading].chapterend)
+          chapterendspawn()
+        break;
+        case 'ambience':
+          scenechannel = (data[linereading].channel)
+          sceneaction = (data[linereading].action)
+          sceneloop = (data[linereading].loop)
+          ambiencespawn()
+        break;
+        case 'playerchoices':
+          scenetext1 = (data[linereading].text1)
+          scenetext2 = (data[linereading].text2)
+          scenetext3 = (data[linereading].text3)
+          sceneop1 = (data[linereading].op1)
+          sceneop2 = (data[linereading].op2)
+          sceneop3 = (data[linereading].op3)
+          playerchoicespawn()
+        break;
+        case 'tieline':
+          sceneto = (data[linereading].to)
+          tielinespawn()
+        break;
+        default:
+          readlines()
       }
     })
     linereading = linereading + 1
