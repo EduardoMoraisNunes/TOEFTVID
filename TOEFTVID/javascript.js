@@ -74,13 +74,13 @@ function characterspawn(){
       case 1:
         document.getElementById(scenecharactermove).classList = 'movechr1'
         setTimeout(() => {
-          document.getElementById(scenecharactermove).style.transform = 'translate3d(101%, 0px, 0px)'
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(57%, 0px, 0px)'
         }, 1000);
         break;
       case 2:
         document.getElementById(scenecharactermove).classList = 'movechr2'
       setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(145%, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(101%, 0px, 0px)'
       }, 1000);
       break;
       case 3:
@@ -92,7 +92,7 @@ function characterspawn(){
       case 4:
         document.getElementById(scenecharactermove).classList = 'movechr4'
         setTimeout(() => {
-          document.getElementById(scenecharactermove).style.transform = 'translate3d(289%, 0px, 0px)'
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(189%, 0px, 0px)'
         }, 1000);
       break;
       case 5:
@@ -104,13 +104,13 @@ function characterspawn(){
       case 6:
         document.getElementById(scenecharactermove).classList = 'movechr6'
         setTimeout(() => {
-          document.getElementById(scenecharactermove).style.transform = 'translate3d(99em, 0px, 0px)'
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(281%, 0px, 0px)'
         }, 1000);
       break;
       case 7:
         document.getElementById(scenecharactermove).classList = 'movechr7'
         setTimeout(() => {
-          document.getElementById(scenecharactermove).style.transform = 'translate3d(113em, 0px, 0px)'
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(327%, 0px, 0px)'
         }, 1000);
       break;
       default:

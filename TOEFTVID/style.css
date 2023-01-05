@@ -307,7 +307,7 @@ body, html{
     width: 100%;
     position: absolute;
 }
-#QUEEN{
+#queen{
     max-height: 51em;
     max-width: 40em;
     height: 125%;
@@ -317,7 +317,7 @@ body, html{
     left: -35%;
     border: 0px;
 }
-#PRINCE{
+#prince{
     max-height: 57em;
     max-width: 48em;
     height: 140%;
@@ -335,7 +335,7 @@ body, html{
     transform: translate3d(-10em, 0px, 0px);
     border: 0px;
 }
-#KALLISTO{
+#kallisto{
     max-height: 55em;
     max-width: 22em;
     height: 140%;
@@ -353,7 +353,7 @@ body, html{
     border: 0px;
     left: -35%;
 }
-#PENELOPE{
+#penelope{
     max-height: 47em;
     max-width: 37em;
     height: 124%;
@@ -363,7 +363,7 @@ body, html{
     border: 0px;
     left: -35%;
 }
-#DERRICK{
+#derrick{
     height: 45em;
     width: 58em;
     position: absolute;
@@ -685,7 +685,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 @keyframes movechr6 {
     100%{
-    transform: translate3d(99em, 0px, 0px);
+    transform: translate3d(281%, 0px, 0px);
     }
 }
 .movechr6{
@@ -694,7 +694,7 @@ transform: translate3d(0px, 3000px, 0px);
 }
 @keyframes movechr7 {
     100%{
-    transform: translate3d(113em, 0px, 0px);
+    transform: translate3d(327%, 0px, 0px);
     }
 }
 .movechr7{
