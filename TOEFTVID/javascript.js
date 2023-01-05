@@ -61,8 +61,8 @@ function characterspawn(){
     body = char + '_body'
     JSON.stringify(expre)
     console.log(expre)
-    document.getElementById(expre).src = 'images/'+char+'_'+sceneexpression+'.webp' 
-    document.getElementById(body).src = 'images/'+char+'.webp' 
+    document.getElementById(expre).src = './images/'+char+'_'+sceneexpression+'.webp' 
+    document.getElementById(body).src = './images/'+char+'.webp' 
     scenecharactermove = char
     switch (scenemove) {
       case 0:
