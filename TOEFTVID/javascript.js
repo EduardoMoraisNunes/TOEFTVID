@@ -49,63 +49,72 @@ function startscene() {
     document.getElementById('scenescreen').style.display = 'block'
 }
 function characterspawn(){
-  
+  char = scenecharacter
   readlines()
-    document.getElementById(scenecharacter).style.display = 'block'
-    expre = scenecharacter + '_expre'
-    body = scenecharacter + '_body'
+  if (scenedisplay === 'block') {
+    document.getElementById(char).style.display = 'block'
+  }
+  if (scenedisplay === 'none') {
+    document.getElementById(char).style.display = 'none'
+  } 
+    expre = char + '_expre'
+    body = char + '_body'
     JSON.stringify(expre)
     console.log(expre)
-    document.getElementById(expre).src = 'images/'+scenecharacter+'_'+sceneexpression+'.webp' 
-    document.getElementById(body).src = 'images/'+scenecharacter+'.webp' 
-    scenecharactermove = scenecharacter
-    if (scenemove === 0) {
-      document.getElementById(scenecharacter).classList = 'movechr0'
+    document.getElementById(expre).src = 'images/'+char+'_'+sceneexpression+'.webp' 
+    document.getElementById(body).src = 'images/'+char+'.webp' 
+    scenecharactermove = char
+    switch (scenemove) {
+      case 0:
+        document.getElementById(scenecharacter).classList = 'movechr0'
       setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(0em, 0px, 0px)'
+        document.getElementById(scenecharactermove).style.transform = 'translate3d(-35%, 0px, 0px)'
       }, 1000);
-    }
-    if (scenemove === 1) {
-      document.getElementById(scenecharactermove).classList = 'movechr1'
-      setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(101%, 0px, 0px)'
-      }, 1000);
-    }
-    if (scenemove === 2) {
-      document.getElementById(scenecharactermove).classList = 'movechr2'
-      setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(145%, 0px, 0px)'
-      }, 1000);
-    }
-    if (scenemove === 3) {
-      document.getElementById(scenecharactermove).classList = 'movechr3'
+        break;
+      case 1:
+        document.getElementById(scenecharactermove).classList = 'movechr1'
+        setTimeout(() => {
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(101%, 0px, 0px)'
+        }, 1000);
+        break;
+      case 2:
+        document.getElementById(scenecharactermove).classList = 'movechr2'
       setTimeout(() => {
         document.getElementById(scenecharactermove).style.transform = 'translate3d(145%, 0px, 0px)'
       }, 1000);
-    }
-    if (scenemove === 4) {
-      document.getElementById(scenecharactermove).classList = 'movechr4'
-      setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(289%, 0px, 0px)'
-      }, 1000);
-    }
-    if (scenemove === 5) {
-      document.getElementById(scenecharactermove).classList = 'movechr5'
-      setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(235%, 0px, 0px)'
-      }, 1000);
-    }
-    if (scenemove === 6) {
-      document.getElementById(scenecharactermove).classList = 'movechr6'
-      setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(99em, 0px, 0px)'
-      }, 1000);
-    }
-    if (scenemove === 7) {
-      document.getElementById(scenecharactermove).classList = 'movechr7'
-      setTimeout(() => {
-        document.getElementById(scenecharactermove).style.transform = 'translate3d(113em, 0px, 0px)'
-      }, 1000);
+      break;
+      case 3:
+        document.getElementById(scenecharactermove).classList = 'movechr3'
+        setTimeout(() => {
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(145%, 0px, 0px)'
+        }, 1000);
+      break;
+      case 4:
+        document.getElementById(scenecharactermove).classList = 'movechr4'
+        setTimeout(() => {
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(289%, 0px, 0px)'
+        }, 1000);
+      break;
+      case 5:
+        document.getElementById(scenecharactermove).classList = 'movechr5'
+        setTimeout(() => {
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(235%, 0px, 0px)'
+        }, 1000);
+      break;
+      case 6:
+        document.getElementById(scenecharactermove).classList = 'movechr6'
+        setTimeout(() => {
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(99em, 0px, 0px)'
+        }, 1000);
+      break;
+      case 7:
+        document.getElementById(scenecharactermove).classList = 'movechr7'
+        setTimeout(() => {
+          document.getElementById(scenecharactermove).style.transform = 'translate3d(113em, 0px, 0px)'
+        }, 1000);
+      break;
+      default:
+        break;
     }
 }
 
@@ -368,6 +377,7 @@ function readlines() {
         case 'spawnchr':
           sceneexpression = (data[linereading].expression)
           scenemove = (data[linereading].scenemove)
+          scenedisplay = (data[linereading].display)
           characterspawn()
         break;
         case 'chrline':
